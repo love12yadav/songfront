@@ -1,0 +1,83 @@
+/* upload.css */
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.song-upload-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: #1e1e1e;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.song-upload-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1db954; /* Spotify green */
+}
+
+.song-upload-container form > div {
+  margin-bottom: 20px;
+}
+
+.song-upload-container label {
+  display: block;
+  margin-bottom: 8px;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.song-upload-container input[type="text"],
+.song-upload-container input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+}
+
+.song-upload-container input[type="file"] {
+  padding: 8px;
+}
+
+.song-upload-container input[type="text"]:focus,
+.song-upload-container input[type="file"]:focus {
+  outline: 2px solid #1db954;
+}
+
+.song-upload-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1db954;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.song-upload-container button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.song-upload-container button:hover:not(:disabled) {
+  background-color: #17a44a;
+}
+
+.song-upload-container p {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #ddd;
+}
