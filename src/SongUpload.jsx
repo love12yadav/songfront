@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './upload.css'; // Add this at the top
-
+import './upload.css'; 
 
 const SongUpload = () => {
     const [file, setFile] = useState(null);
@@ -47,7 +46,7 @@ const SongUpload = () => {
         try {
             const response = await axios.post('http://localhost:8080/api/songs/upload', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data', // Important for file upload
+                    'Content-Type': 'multipart/form-data', 
                 },
             });
 
