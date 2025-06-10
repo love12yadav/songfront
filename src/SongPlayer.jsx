@@ -22,7 +22,6 @@ const SongPlayer = () => {
   const clapDetectionRunningRef = useRef(false);
   const voiceRecognitionRunningRef = useRef(false);
 
-  // Sync state and ref for currentSong
   const setCurrentSongSafe = (song) => {
     setCurrentSong(song);
     currentSongRef.current = song;
@@ -79,9 +78,9 @@ const SongPlayer = () => {
 
     const playAudio = async () => {
       try {
-        audio.pause(); // Pause before changing source
+        audio.pause(); 
         audio.src = currentSong.playUrl;
-        await audio.load(); // Wait until it's loaded
+        await audio.load();
         if (playing) {
           await audio.play();
         }
@@ -141,7 +140,6 @@ const SongPlayer = () => {
     setPlaying(true);
   };
 
-  // Clap detection handler (same logic from first code)
   const handleClapDetected = () => {
     const now = Date.now();
     if (now - lastClapTime > 1500) {
@@ -155,7 +153,6 @@ const SongPlayer = () => {
     }
   };
 
-  // Clap detection start (same logic)
   const startClapDetection = async () => {
     if (clapDetectionRunningRef.current) return;
     clapDetectionRunningRef.current = true;
@@ -172,7 +169,7 @@ const SongPlayer = () => {
       analyserRef.current = analyser;
 
       const detect = () => {
-        if (!audioContextRef.current) return; // stop if closed
+        if (!audioContextRef.current) return; 
         analyser.getByteTimeDomainData(dataArray);
         const average = dataArray.reduce((a, b) => a + Math.abs(b - 128), 0) / dataArray.length;
         if (average > 30) {
@@ -187,7 +184,6 @@ const SongPlayer = () => {
     }
   };
 
-  // Clap detection stop
   const stopClapDetection = () => {
     if (audioContextRef.current) {
       audioContextRef.current.close();
@@ -196,7 +192,6 @@ const SongPlayer = () => {
     clapDetectionRunningRef.current = false;
   };
 
-  // Voice recognition start (same logic)
   const startVoiceRecognition = () => {
     if (voiceRecognitionRunningRef.current) return;
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -230,16 +225,13 @@ const SongPlayer = () => {
     recognition.onend = () => {
       console.log('SpeechRecognition ended');
       voiceRecognitionRunningRef.current = false;
-      // Auto-restart recognition unless manually stopped
-      // Uncomment below to keep continuous listening:
-      // startVoiceRecognition();
+      
     };
 
     recognition.start();
     voiceRecognitionRunningRef.current = true;
   };
 
-  // Voice recognition stop
   const stopVoiceRecognition = () => {
     if (recognitionRef.current) {
       recognitionRef.current.stop();
@@ -317,7 +309,7 @@ const SongPlayer = () => {
               color: '#fff',
               textAlign: 'center',
               userSelect: 'none',
-              boxShadow: 'none', // Optional: remove default MUI shadow
+              boxShadow: 'none', 
             }}
           >
             <CardContent>
