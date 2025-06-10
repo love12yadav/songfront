@@ -19,7 +19,7 @@ const App = () => {
         autoPlay
         loop
         muted
-        src={backgroundVideo} /* Path to your video */
+        src={backgroundVideo} 
         type="video/mp4"
       />
 
