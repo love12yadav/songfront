@@ -28,11 +28,11 @@ const SongPlayer = () => {
   };
 
   useEffect(() => {
-    axios.get('https://songbackend-qlep.onrender.com//api/songs')
+    axios.get('https://songbackend-qlep.onrender.com/api/songs')
       .then(response => {
         const songsWithUrls = response.data.map(song => ({
           ...song,
-          playUrl: `https://songbackend-qlep.onrender.com//api/songs/play/${song.url}`
+          playUrl: `https://songbackend-qlep.onrender.com/api/songs/play/${song.url}`
 
         }));
         setSongs(songsWithUrls);
