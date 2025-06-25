@@ -7,7 +7,7 @@ A modern and interactive music player built with **React** and **Material UI**, 
 -  Have voice detetection to change song
 - 🎙️ Voice commands to change tracks
 - 🎧 Integrated backend support (Spring Boot suggested)
-
+  
 ---
 
 ## 🚀 Features
